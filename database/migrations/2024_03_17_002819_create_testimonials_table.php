@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('testi_slug')->nullable();
             $table->integer('testi_status')->default(1);
             $table->integer('testi_publish')->default(1);
-            $table->integer('testi_creator');
+            $table->integer('testi_creator')->nullable();
             $table->integer('testi_editor')->nullable();
             $table->timestamps();
         });
