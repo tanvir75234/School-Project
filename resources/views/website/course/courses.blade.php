@@ -14,7 +14,7 @@
 
     <div class="custom-breadcrumns border-bottom">
       <div class="container">
-        <a href="index.html">Home</a>
+        <a href="{{ route('home') }}">Home</a>
         <span class="mx-3 icon-keyboard_arrow_right"></span>
         <span class="current">Courses</span>
       </div>
@@ -26,7 +26,7 @@
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="course-1-item">
                         <figure class="thumnail">
-                        <a href="course-single.html"><img src="{{ asset('website') }}/images//course_1.jpg" alt="Image" class="img-fluid"></a>
+                        <a href="{{ route('single_course') }}"><img src="{{ asset('website') }}/images//course_1.jpg" alt="Image" class="img-fluid"></a>
                         <div class="price">$99.00</div>
                         <div class="category"><h3>Mobile Application</h3></div>  
                         </figure>
@@ -40,7 +40,7 @@
                             <span class="icon-star2 text-warning"></span>
                         </div>
                         <p class="desc mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique accusantium ipsam.</p>
-                        <p><a href="course-single.html" class="btn btn-primary rounded-0 px-4">Enroll In This Course</a></p>
+                        <p><a href="{{ route('single_course') }}" class="btn btn-primary rounded-0 px-4">Enroll In This Course</a></p>
                         </div>
                     </div>
                 </div>
@@ -48,7 +48,7 @@
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="course-1-item">
                         <figure class="thumnail">
-                                <a href="course-single.html"><img src="{{ asset('website') }}/images//course_2.jpg" alt="Image" class="img-fluid"></a>
+                                <a href="{{ route('single_course') }}"><img src="{{ asset('website') }}/images//course_2.jpg" alt="Image" class="img-fluid"></a>
                         <div class="price">$99.00</div>
                         <div class="category"><h3>Mobile Application</h3></div>  
                         </figure>
@@ -62,7 +62,7 @@
                             <span class="icon-star2 text-warning"></span>
                         </div>
                         <p class="desc mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique accusantium ipsam.</p>
-                        <p><a href="course-single.html" class="btn btn-primary rounded-0 px-4">Enroll In This Course</a></p>
+                        <p><a href="{{ route('single_course') }}" class="btn btn-primary rounded-0 px-4">Enroll In This Course</a></p>
                         </div>
                     </div>
                 </div>
@@ -70,7 +70,7 @@
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="course-1-item">
                         <figure class="thumnail">
-                                <a href="course-single.html"><img src="{{ asset('website') }}/images//course_3.jpg" alt="Image" class="img-fluid"></a>
+                                <a href="{{ route('single_course') }}"><img src="{{ asset('website') }}/images//course_3.jpg" alt="Image" class="img-fluid"></a>
                         <div class="price">$99.00</div>
                         <div class="category"><h3>Mobile Application</h3></div>  
                         </figure>
@@ -84,7 +84,7 @@
                             <span class="icon-star2 text-warning"></span>
                         </div>
                         <p class="desc mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique accusantium ipsam.</p>
-                        <p><a href="course-single.html" class="btn btn-primary rounded-0 px-4">Enroll In This Course</a></p>
+                        <p><a href="{{ route('single_course') }}" class="btn btn-primary rounded-0 px-4">Enroll In This Course</a></p>
                         </div>
                     </div>
                 </div>
@@ -93,7 +93,7 @@
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="course-1-item">
                         <figure class="thumnail">
-                                <a href="course-single.html"><img src="{{ asset('website') }}/images//course_4.jpg" alt="Image" class="img-fluid"></a>
+                                <a href="{{ route('single_course') }}"><img src="{{ asset('website') }}/images//course_4.jpg" alt="Image" class="img-fluid"></a>
                         <div class="price">$99.00</div>
                         <div class="category"><h3>Mobile Application</h3></div>  
                         </figure>
@@ -107,7 +107,7 @@
                             <span class="icon-star2 text-warning"></span>
                         </div>
                         <p class="desc mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique accusantium ipsam.</p>
-                        <p><a href="course-single.html" class="btn btn-primary rounded-0 px-4">Enroll In This Course</a></p>
+                        <p><a href="{{ route('single_course') }}" class="btn btn-primary rounded-0 px-4">Enroll In This Course</a></p>
                         </div>
                     </div>
                 </div>
@@ -115,7 +115,7 @@
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="course-1-item">
                         <figure class="thumnail">
-                                <a href="course-single.html"><img src="{{ asset('website') }}/images//course_5.jpg" alt="Image" class="img-fluid"></a>
+                                <a href="{{ route('single_course') }}"><img src="{{ asset('website') }}/images//course_5.jpg" alt="Image" class="img-fluid"></a>
                         <div class="price">$99.00</div>
                         <div class="category"><h3>Mobile Application</h3></div>  
                         </figure>
@@ -129,7 +129,7 @@
                             <span class="icon-star2 text-warning"></span>
                         </div>
                         <p class="desc mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique accusantium ipsam.</p>
-                        <p><a href="course-single.html" class="btn btn-primary rounded-0 px-4">Enroll In This Course</a></p>
+                        <p><a href="{{ route('single_course') }}" class="btn btn-primary rounded-0 px-4">Enroll In This Course</a></p>
                         </div>
                     </div>
                 </div>
@@ -137,7 +137,7 @@
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="course-1-item">
                         <figure class="thumnail">
-                                <a href="course-single.html"><img src="{{ asset('website') }}/images//course_6.jpg" alt="Image" class="img-fluid"></a>
+                                <a href="{{ route('single_course') }}"><img src="{{ asset('website') }}/images//course_6.jpg" alt="Image" class="img-fluid"></a>
                         <div class="price">$99.00</div>
                         <div class="category"><h3>Mobile Application</h3></div>  
                         </figure>
@@ -151,7 +151,7 @@
                             <span class="icon-star2 text-warning"></span>
                         </div>
                         <p class="desc mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique accusantium ipsam.</p>
-                        <p><a href="course-single.html" class="btn btn-primary rounded-0 px-4">Enroll In This Course</a></p>
+                        <p><a href="{{ route('single_course') }}" class="btn btn-primary rounded-0 px-4">Enroll In This Course</a></p>
                         </div>
                     </div>
                 </div>
