@@ -145,7 +145,7 @@
                         <span class="icon-star2 text-warning"></span>
                     </div>
                     <p class="desc mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique accusantium ipsam.</p>
-                    <p><a href="courses-single.html" class="btn btn-primary rounded-0 px-4">Enroll In This Course</a></p>
+                    <p><a href="{{ route('single_course') }}" class="btn btn-primary rounded-0 px-4">Enroll In This Course</a></p>
                     </div>
                 </div>
 
@@ -171,7 +171,7 @@
     
                 <div class="course-1-item">
                     <figure class="thumnail">
-                        <a href="course-single.html"><img src="{{ asset('website') }}/images/course_5.jpg" alt="Image" class="img-fluid"></a>
+                        <a href="{{ route('single_course') }}"><img src="{{ asset('website') }}/images/course_5.jpg" alt="Image" class="img-fluid"></a>
                     <div class="price">$99.00</div>
                     <div class="category"><h3>Web Design</h3></div>  
                     </figure>
@@ -191,7 +191,7 @@
     
                 <div class="course-1-item">
                     <figure class="thumnail">
-                        <a href="course-single.html"><img src="{{ asset('website') }}/images/course_6.jpg" alt="Image" class="img-fluid"></a>
+                        <a href="{{ route('single_course') }}"><img src="{{ asset('website') }}/images/course_6.jpg" alt="Image" class="img-fluid"></a>
                     <div class="price">$99.00</div>
                     <div class="category"><h3>Mobile Application</h3></div>  
                     </figure>
@@ -251,9 +251,11 @@
         </div>
 
     @php    
-        $testimonial = App\Models\Testimonial::where('testi_status',1)->orderBy('testi_id','DESC')->first();
+        $testimonial = App\Models\Testimonial::where('testi_status',1)->orderBy('testi_id','DESC')->get();
     @endphp
         <div class="owl-slide owl-carousel">
+
+            @foreach($testimonial as $testimonial)
             <div class="ftco-testimonial-1">
                 <div class="ftco-testimonial-vcard d-flex align-items-center mb-4">
                     <img src="{{ asset('website') }}/images/person_1.jpg" alt="Image" class="img-fluid mr-3">
@@ -262,10 +264,11 @@
                             <span>{{ $testimonial->testi_designation }}</span>
                         </div>
                     </div>
-                 <div>
+                <div>
                     <p>&ldquo;Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque, mollitia. Possimus mollitia nobis libero quidem aut tempore dolore iure maiores, perferendis, provident numquam illum nisi amet necessitatibus. A, provident aperiam!&rdquo;</p>
                 </div>
             </div>
+            @endforeach
         </div>  
     </div>
     </div>

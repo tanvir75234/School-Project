@@ -9,7 +9,7 @@
                           <i class="fab fa-gg-circle"></i>View Contact Information
                       </div>  
                       <div class="col-md-4 card_button_part">
-                          <a href="{{ route('banner') }}" class="btn btn-sm btn-dark"><i class="fas fa-th"></i>All Contact Message</a>
+                          <a href="{{ route('contact.message') }}" class="btn btn-sm btn-dark"><i class="fas fa-th"></i>All Contact Message</a>
                       </div>  
                   </div>
                 </div>
@@ -58,6 +58,11 @@
                               <td>Message</td>  
                               <td>:</td>  
                               <td>{{ $contact->cm_message }}</td>  
+                            </tr>
+                            <tr>
+                              <td>Created Time</td>  
+                              <td>:</td>  
+                              <td>{{ $contact->created_at->format('d-M-Y') }}</td>  
                             </tr>
                           </table>
                       </div>

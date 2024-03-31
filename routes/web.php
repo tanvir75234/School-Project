@@ -29,6 +29,7 @@ Route::get('/', function () {
 Route::get('/home',[IndexController::class,'index'])->name('home');
 Route::get('/about',[IndexController::class,'about'])->name('about');
 Route::get('/contact',[IndexController::class,'contact'])->name('contact');
+Route::post('/contact/submit',[IndexController::class,'contact_insert'])->name('contact.insert');
 Route::get('/news',[IndexController::class,'news'])->name('news');
 Route::get('/single-course',[CoursesController::class,'single_course'])->name('single_course');
 Route::get('/courses',[CoursesController::class,'courses'])->name('courses');

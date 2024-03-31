@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades;
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
 use App\Models\Basic;
 use App\Models\Social;
 use Carbon\Carbon;
@@ -18,24 +21,57 @@ class ManageController extends Controller{
 
     public function basic_update(Request $request){
         
-    
+          $id = $request['id'];
           $slug='B'.uniqid();
-          $editor=Auth::user()->id;
-          $update=Basic::where('basic_status',1)->where('basic_id',1)->update([
+          
+          $update=Basic::where('basic_status',1)->where('basic_id',$id)->update([
             'basic_company'=>$request['basic_company'],
             'basic_title'=>$request['basic_title'],
-            'basic_editor'=>$editor,
+            'basic_logo' => $request['basic_logo'],
+            'basic_favicon' => $request['basic_favicon'],
+            'basic_flogo' => $request['basic_flogo'],
+            
             'basic_slug'=>$slug,
             'updated_at'=>Carbon::now()->toDateTimeString()
           ]);
 
-          if($update){
-            Session::flash('success','Successfully update your basic information');
-            return redirect('/dashboard/manage/basic');
-          }else{
-            Session::flash('Opps!','Operation failed');
-            return redirect('/dashboard/manage/basic');
-          }
+          if($request->hasfile('basic_logo')){
+            $manager = new ImageManager(new Driver());
+            $logo = $request->file('basic_logo');
+            $logoName = 'basic_logo'.time().'.'.$logo->getClientOriginalExtension(); 
+            $logo = $manager->read($logo);
+            $logo = $logo->resize(300,300);
+            $logo->save('public/contents/uploads/basic/logo/'.$logoName);
+            
+            Basic::where('basic_id', $update)->update([
+                      'basic_logo' => $logo,
+        
+                    ]);
+
+        }
+
+        if($request->hasfile('basic_favicon')){
+          $manager = new ImageManager(new Driver());
+          $favicon = $request->file('basic_favicon');
+          $faviconName = 'basic_favicon'.time().'.'.$favicon->getClientOriginalExtension(); 
+          $favicon = $manager->read($favicon);
+          $favicon = $favicon->resize(300,300);
+          $favicon->save('public/contents/uploads/basic/favicon/'.$faviconName);
+          
+          Basic::where('basic_id', $update)->update([
+                    'basic_favicon' => $faviconName,
+      
+                  ]);
+
+      }
+          
+        if($update){
+          Session::flash('success','Successfully update your basic information');
+          return redirect('/dashboard/manage/basic');
+        }else{
+          Session::flash('opps!','Operation failed');
+          return back();
+        }
 
     }
 

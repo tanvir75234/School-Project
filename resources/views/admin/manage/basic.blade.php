@@ -8,7 +8,7 @@
                                   <div class="card-header">
                                     <div class="row">
                                         <div class="col-md-8 card_title_part">
-                                            <i class="fab fa-gg-circle"></i>Service
+                                            <i class="fab fa-gg-circle"></i>Basic 
                                         </div>  
                                         <div class="col-md-4 card_button_part">
                                             <a href="{{ route('basic') }}" class="btn btn-sm btn-dark"><i class="fas fa-th"></i>All Basic</a>
@@ -35,6 +35,7 @@
                                       <div class="row mb-3">
                                         <label class="col-sm-3 col-form-label col_form_label">Company Name<span class="req_star">*</span>:</label>
                                         <div class="col-sm-7">
+                                          <input type="text" name="id" value="{{ $basic->basic_id }}">
                                           <input type="text" class="form-control form_control" id="" name="basic_company" value='{{ $basic->basic_company }}'>
                                         </div>
                                       </div>
@@ -47,23 +48,23 @@
                                       <div class="row mb-3">
                                         <label class="col-sm-3 col-form-label col_form_label">Logo<span class="req_star">*</span>:</label>
                                         <div class="col-sm-7">
-                                          <input type="file" class="form-control form_control" id="" name="basic_logo">
+                                          <input type="file" class="form-control form_control" id="" name="basic_logo" value="{{ $basic->basic_logo }}">
                                         </div>
                                       </div>
                                       <div class="row mb-3">
                                         <label class="col-sm-3 col-form-label col_form_label">Favicon<span class="req_star">*</span>:</label>
                                         <div class="col-sm-7">
-                                          <input type="file" class="form-control form_control" id="" name="basic_favicon">
+                                          <input type="file" class="form-control form_control" id="" name="basic_favicon" value="{{ $basic->basic_favicon }}">
                                         </div>
                                       </div>
                                       <div class="row mb-3">
                                         <label class="col-sm-3 col-form-label col_form_label">Footer Logo<span class="req_star">*</span>:</label>
                                         <div class="col-sm-7">
-                                          <input type="file" class="form-control form_control" id="" name="basic_flogo">
+                                          <input type="file" class="form-control form_control" id="" name="basic_flogo" value="{{ $basic->basic_flogo }}" >
                                         </div>
                                           </div>   
                                   <div class="card-footer text-center">
-                                    <button type="submit" class="btn btn-sm btn-dark">UPLOAD</button>
+                                    <button type="submit" class="btn btn-sm btn-dark">UPDATE</button>
                                   </div>  
                                 </div>
                             </form>

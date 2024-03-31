@@ -23,38 +23,42 @@
 
     <div class="site-section">
         <div class="container">
+            <form action="{{ route('contact.insert') }}" method="post">
+              @csrf
             <div class="row">
                 <div class="col-md-6 form-group">
                     <label for="fname">First Name</label>
-                    <input type="text" id="fname" class="form-control form-control-lg">
+                    <input type="text" name="first_name" id="fname" class="form-control form-control-lg">
                 </div>
                 <div class="col-md-6 form-group">
                     <label for="lname">Last Name</label>
-                    <input type="text" id="lname" class="form-control form-control-lg">
+                    <input type="text" name="last_name" id="lname" class="form-control form-control-lg">
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6 form-group">
                     <label for="eaddress">Email Address</label>
-                    <input type="text" id="eaddress" class="form-control form-control-lg">
+                    <input type="email" name="email" id="eaddress" class="form-control form-control-lg">
                 </div>
                 <div class="col-md-6 form-group">
                     <label for="tel">Tel. Number</label>
-                    <input type="text" id="tel" class="form-control form-control-lg">
+                    <input type="text" name="number" id="tel" class="form-control form-control-lg">
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12 form-group">
                     <label for="message">Message</label>
-                    <textarea name="" id="message" cols="30" rows="10" class="form-control"></textarea>
+                    <textarea name="message" id="message" cols="30" rows="10" class="form-control"></textarea>
                 </div>
-            </div>
-
-            <div class="row">
+                <div class="row">
                 <div class="col-12">
-                    <input type="submit" value="Send Message" class="btn btn-primary btn-lg px-5">
+                    <button type="submit" class="btn btn-primary btn-lg px-5">SUBMIT</button>
                 </div>
             </div>
+            </div>
+            </form>
+
+            
         </div>
     </div>
 

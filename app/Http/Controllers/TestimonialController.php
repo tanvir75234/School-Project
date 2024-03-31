@@ -31,7 +31,7 @@ class TestimonialController extends Controller{
     public function insert(Request $request){
 
         $slug = 'S'.uniqid(20);
-        $creator = Auth::user()->id;
+        $creator=Auth::user()->id;
 
         $insert = Testimonial::insert([
             'testi_name' => $request['testi_name'],
@@ -41,7 +41,7 @@ class TestimonialController extends Controller{
             'testi_order' => $request['testi_order'],
             'testi_company' => $request['testi_company'],
             'testi_slug' => $slug,
-            'testi_creator' => $creator,
+            'testi_creator' =>$creator,
             'created_at' =>Carbon::now('asia/dhaka')->toDateTimeString(),  
             'updated_at' =>Carbon::now('asia/dhaka')->toDateTimeString(),    
         ]);

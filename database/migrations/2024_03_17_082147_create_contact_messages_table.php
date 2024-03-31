@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('contact_messages', function (Blueprint $table) {
             $table->bigIncrements('cm_id');
             $table->string('cm_name')->nullable();
+            $table->string('cm_last_name')->nullable();
             $table->string('cm_phone')->nullable();
             $table->string('cm_email')->nullable();
             $table->string('cm_slug')->nullable();
