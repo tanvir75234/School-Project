@@ -1,5 +1,6 @@
 @php
   $contact = App\Models\ContactMessage::where('cm_status',1)->orderBy('cm_id','DESC')->first();
+  $basic = App\Models\Basic::where('basic_status',1)->orderBy('basic_id','DESC')->first();
 @endphp
 
 <!DOCTYPE html>
@@ -68,11 +69,13 @@
 
       <div class="container">
         <div class="d-flex align-items-center">
+          
           <div class="site-logo">
             <a href="{{ route('home') }}" class="d-block">
-              <img src="{{ asset('website') }}/images/logo.jpg" alt="Image" class="img-fluid">
+              <img alt="Image" class="img-fluid" src="{{ asset('contents/uploads/basic/logo'.$basic->basic_logo) }}">
             </a>
           </div>
+         
           <div class="mr-auto">
             <nav class="site-navigation position-relative text-right" role="navigation">
               <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">

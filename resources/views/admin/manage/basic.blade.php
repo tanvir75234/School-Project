@@ -2,7 +2,7 @@
 @section('content')
                     <div class="row">
                         <div class="col-md-12 ">
-                            <form action="{{ url('/dashboard/manage/basic/update') }}" method="post" >
+                            <form action="{{ url('/dashboard/manage/basic/update') }}" method="post" enctype="multipart/form-data">
                               @csrf
                                 <div class="card mb-3">
                                   <div class="card-header">
@@ -48,7 +48,7 @@
                                       <div class="row mb-3">
                                         <label class="col-sm-3 col-form-label col_form_label">Logo<span class="req_star">*</span>:</label>
                                         <div class="col-sm-7">
-                                          <input type="file" class="form-control form_control" id="" name="basic_logo" value="{{ $basic->basic_logo }}">
+                                          <input type="file" class="form-control form_control" id="" name="basic_logo" value="{{ old($basic->basic_logo) }}">
                                         </div>
                                       </div>
                                       <div class="row mb-3">

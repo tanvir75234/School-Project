@@ -41,11 +41,10 @@ class ManageController extends Controller{
             $logoName = 'basic_logo'.time().'.'.$logo->getClientOriginalExtension(); 
             $logo = $manager->read($logo);
             $logo = $logo->resize(300,300);
-            $logo->save('public/contents/uploads/basic/logo/'.$logoName);
+            $logo->save('contents/uploads/basic/logo/'.$logoName);
             
             Basic::where('basic_id', $update)->update([
-                      'basic_logo' => $logo,
-        
+                      'basic_logo' => $logoName,      
                     ]);
 
         }
@@ -56,7 +55,7 @@ class ManageController extends Controller{
           $faviconName = 'basic_favicon'.time().'.'.$favicon->getClientOriginalExtension(); 
           $favicon = $manager->read($favicon);
           $favicon = $favicon->resize(300,300);
-          $favicon->save('public/contents/uploads/basic/favicon/'.$faviconName);
+          $favicon->save('contents/uploads/basic/favicon/'.$faviconName);
           
           Basic::where('basic_id', $update)->update([
                     'basic_favicon' => $faviconName,
